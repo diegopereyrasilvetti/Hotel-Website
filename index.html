@@ -13,7 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
     <script src="https://kit.fontawesome.com/0609dfb132.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body>
@@ -25,24 +24,23 @@
             <ul class="ul-menu">
                 <li class="li-menu"><a href="#nosotros">Nosotros</a></li>
                 <li class="li-menu"><a href="#contactanos">Contactanos</a></li>
-            </ul>  
+            </ul>
         </nav>
     </header>
-    <main>
-         <section class="nosotros">
-            <div>
-                <h2 id="nosotros">Nosotros</h2>
-                    <p><strong>Nuestra historia:</strong>Desde 1955, nuestra familia tiene el sueño de crear un lugar donde cada visitante pueda sentirse como en casa. Lo que comenzó como un pequeño proyecto familiar en el corazón de Bariloche, con el paso de los años se convirtió en una tradición que continúa hasta hoy.</p>
-                    <p>Actualmente, somos los nietos de aquellos primeros fundadores quienes llevamos adelante el hotel, manteniendo vivos los mismos valores que nos acompañaron desde el comienzo: familia, unidad y hospitalidad.</p>
-                    <p>Hoy, combinamos esa esencia familiar con instalaciones modernas, comodidades de primer nivel y una amplia variedad de servicios, pensados para brindar una experiencia segura, confortable y placentera.</p>
-                    <p>Hoy, combinamos esa esencia familiar con instalaciones modernas, comodidades de primer nivel y una amplia variedad de servicios, pensados para brindar una experiencia segura, confortable y placentera.</p>
-            </div>        
-    </main>
-</body>
-<img src="./images/descarga.jfif" alt="hotel-foto" class="pic">
 
-<section>
-            <h2 id="contactanos">Contactanos</h2>
+    <main>
+        <section class="nosotros" id="nosotros">
+            <img src="./images/descarga.jfif" alt="" class="pic">
+            <div>
+                <h2>Nosotros</h2>
+                <p><strong>Nuestra historia:</strong> Desde 1955, nuestra familia tiene el sueño de crear un lugar donde cada visitante pueda sentirse como en casa. Lo que comenzó como un pequeño proyecto familiar en el corazón de Bariloche, con el paso de los años se convirtió en una tradición que continúa hasta hoy.</p>
+                <p>Actualmente, somos los nietos de aquellos primeros fundadores quienes llevamos adelante el hotel, manteniendo vivos los mismos valores que nos acompañaron desde el comienzo: familia, unidad y hospitalidad.</p>
+                <p>Hoy, combinamos esa esencia familiar con instalaciones modernas, comodidades de primer nivel y una amplia variedad de servicios, pensados para brindar una experiencia segura, confortable y placentera.</p>
+            </div>
+        </section>
+
+        <section id="contactanos">
+            <h2>Contactanos</h2>
             <form method="post" action="/">
                 <fieldset>
                     <div class="field-form">
@@ -56,39 +54,40 @@
                             Mail:
                         </label>
                         <input type="email" id="email" name="email" required>
-                    </div> 
+                    </div>
                     <div class="field-form">
                         <label for="message">
                             Mensaje:
                         </label>
                         <textarea name="message" id="message"></textarea>
-                        
                     </div>
                 </fieldset>
 
                 <button type="submit">Enviar</button>
             </form>
         </section>
-           
-<footer class="footer">
-    <div class="footer-container">
+    </main>
 
-        <div class="footer-brand">
-            <h2>Hotel Bariloche</h2>
-            <p>Desde 1955</p>
-            <p>
-                Tradición familiar, hospitalidad y el confort
-                que necesitás para disfrutar de Bariloche.
-            </p>
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <h2>Hotel Bariloche</h2>
+                <p>Desde 1955</p>
+                <p>
+                    Tradición familiar, hospitalidad y el confort
+                    que necesitás para disfrutar de Bariloche.
+                </p>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p>📍 Bariloche, Río Negro, Argentina</p>
+                <p>📞 +54 294 XXX-XXXX</p>
+                <p>✉️ reservas@hotelbariloche.com</p>
+            </div>
+
         </div>
-
-        <div class="footer-contact">
-            <h3>Contacto</h3>
-            <p>📍 Bariloche, Río Negro, Argentina</p>
-            <p>📞 +54 294 XXX-XXXX</p>
-            <p>✉️ reservas@hotelbariloche.com</p>
-        </div>
-
-    </div>
-
+    </footer>
+</body>
 </html>
