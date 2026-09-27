@@ -3,3 +3,91 @@
     margin: 0;
     padding: 0;
 }
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    color:rgb(255, 255, 255);
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+header {
+    position: sticky;
+    z-index: 50;
+    top: 0;
+    height: 76px;
+    border-bottom: 1px;
+    background: rgba(110, 5, 11, 0.82);
+}
+
+nav {
+    display: flex;
+    height: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h1 {
+    color:white;
+    font-size:24px;
+    font-weight: 800;
+}
+
+#menu {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.label-menu {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    color:rgb(160, 8, 8);
+    background: var(--surface);
+    cursor: pointer;
+    place-items: center;
+}
+
+.label-menu:hover {
+    background: rgba(255, 255, 255, 0.13);
+    transform: translateY(-1px);
+}
+
+.ul-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: flex;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background: rgba(128, 15, 12, 0.97);
+    list-style: none;
+    transition:0.5s;
+}
+
+#menu:checked + .ul-menu {
+    max-height: 220px;
+    padding: 18px 20px 22px;
+    border-bottom: 1px;
+}
+
+.pic {
+    width:100%;
+}

@@ -20,6 +20,9 @@
     <header>
         <nav>
             <h1>Hotel Bariloche</h1>
+            <label class="label-menu" for="menu" aria-label="Abrir menú de navegación"><i class="fa-solid fa-bars" aria-hidden="true"></i></label>
+            <input type="checkbox" name="menu" id="menu">
+            <ul class="ul-menu">
                 <li class="li-menu"><a href="#nosotros">Nosotros</a></li>
                 <li class="li-menu"><a href="#contactanos">Contactanos</a></li>
             </ul>  
@@ -36,6 +39,37 @@
             </div>        
     </main>
 </body>
+<img src="./images/descarga.jfif" alt="hotel-foto" class="pic">
+
+<section>
+            <h2 id="contactanos">Contactanos</h2>
+            <form method="post" action="/">
+                <fieldset>
+                    <div class="field-form">
+                        <label for="name">
+                        Nombre:
+                        </label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="field-form">
+                        <label for="email">
+                            Mail:
+                        </label>
+                        <input type="email" id="email" name="email" required>
+                    </div> 
+                    <div class="field-form">
+                        <label for="message">
+                            Mensaje:
+                        </label>
+                        <textarea name="message" id="message"></textarea>
+                        
+                    </div>
+                </fieldset>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+           
 <footer class="footer">
     <div class="footer-container">
 
