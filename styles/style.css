@@ -144,6 +144,11 @@ main {
     flex: 1 1 420px;
 }
 
+ul {
+    padding-left: 20px;
+    margin: 20px;
+}
+
 h2 {
     margin-bottom: 18px;
     color:white;
