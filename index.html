@@ -83,20 +83,29 @@
             </dialog>
         </section>
 
-        <section>
+        <section class="excursiones" id="excurciones">
             <h2>Excurciones</h2>
-            <img src="./images/excurcion/excurcion1.webp" alt="excurcion1">
-            <img src="./images/excurcion/excurciones2.jpg" alt="excurcion2">
-            <img src="./images/excurcion/excurciones3.jfif" alt="excurcion3">
-            <img src="./images/excurcion/excurcion4.jpg" alt="excurcion4">
-            <img src="./images/excurcion/excurcion5.jpg" alt="excurcion5">
-            <img src="./images/excurcion/excurcion6.jfif" alt="excurcion6">
-            <img src="./images/excurcion/excurcion7.webp" alt="excurcion7">
-            <img src="./images/excurcion/excurcion8.jpg" alt="excurcion8">
-            <img src="./images/excurcion/excurcion9.jfif" alt="excurcion9">
-            <img src="./images/excurcion/excurcion10.jfif" alt="excurcion10">
-            <img src="./images/excurcion/excurcion11.avif" alt="excurcion11">
-            <img src="./images/excurcion/excurcion12.jfif" alt="excurcion12">
+            <div class="carousel">
+                <button type="button" class="carousel-btn carousel-prev" aria-label="Excursión anterior">&#10094;</button>
+                <div class="carousel-viewport">
+                    <div class="carousel-track">
+                        <img src="./images/excurcion/excurcion1.webp" alt="excurcion1">
+                        <img src="./images/excurcion/excurciones2.jpg" alt="excurcion2">
+                        <img src="./images/excurcion/excurciones3.jfif" alt="excurcion3">
+                        <img src="./images/excurcion/excurcion4.jpg" alt="excurcion4">
+                        <img src="./images/excurcion/excurcion5.jpg" alt="excurcion5">
+                        <img src="./images/excurcion/excurcion6.jfif" alt="excurcion6">
+                        <img src="./images/excurcion/excurcion7.webp" alt="excurcion7">
+                        <img src="./images/excurcion/excurcion8.jpg" alt="excurcion8">
+                        <img src="./images/excurcion/excurcion9.jfif" alt="excurcion9">
+                        <img src="./images/excurcion/excurcion10.jfif" alt="excurcion10">
+                        <img src="./images/excurcion/excurcion11.avif" alt="excurcion11">
+                        <img src="./images/excurcion/excurcion12.jfif" alt="excurcion12">
+                    </div>
+                </div>
+                <button type="button" class="carousel-btn carousel-next" aria-label="Siguiente excursión">&#10095;</button>
+            </div>
+            <div class="carousel-dots"></div>
         </section>
 
         <section id="contactanos">
@@ -171,6 +180,41 @@
                 roomModal.close();
             }
         });
+    </script>
+
+    <script>
+        const carouselTrack = document.querySelector('.carousel-track');
+        const carouselSlides = Array.from(carouselTrack.children);
+        const carouselPrev = document.querySelector('.carousel-prev');
+        const carouselNext = document.querySelector('.carousel-next');
+        const carouselDots = document.querySelector('.carousel-dots');
+        let carouselIndex = 0;
+
+        carouselSlides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'carousel-dot';
+            dot.setAttribute('aria-label', `Ir a la excursión ${i + 1}`);
+            dot.addEventListener('click', () => goToSlide(i));
+            carouselDots.appendChild(dot);
+        });
+
+        const dotButtons = Array.from(carouselDots.children);
+
+        function updateCarousel() {
+            carouselTrack.style.transform = `translateX(-${carouselIndex * 100}%)`;
+            dotButtons.forEach((dot, i) => dot.classList.toggle('active', i === carouselIndex));
+        }
+
+        function goToSlide(i) {
+            carouselIndex = (i + carouselSlides.length) % carouselSlides.length;
+            updateCarousel();
+        }
+
+        carouselPrev.addEventListener('click', () => goToSlide(carouselIndex - 1));
+        carouselNext.addEventListener('click', () => goToSlide(carouselIndex + 1));
+
+        updateCarousel();
     </script>
 </body>
 </html>
