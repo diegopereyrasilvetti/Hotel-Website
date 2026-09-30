@@ -1,3 +1,5 @@
+"use strict";
+
 const roomModal = document.querySelector('.room-modal');
 const roomModalImg = roomModal.querySelector('img');
 
