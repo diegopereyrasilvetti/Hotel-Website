@@ -82,3 +82,34 @@ carouselEl.addEventListener('focusout', startAutoplay);
 
 updateCarousel();
 startAutoplay();
+
+const reservaForm = document.getElementById('reserva-form');
+const reservaCheckin = document.getElementById('reserva-checkin');
+const reservaCheckout = document.getElementById('reserva-checkout');
+const reservaFeedback = document.getElementById('reserva-feedback');
+
+const today = new Date().toISOString().split('T')[0];
+reservaCheckin.min = today;
+reservaCheckout.min = today;
+
+reservaCheckin.addEventListener('change', () => {
+    reservaCheckout.min = reservaCheckin.value || today;
+    if (reservaCheckout.value && reservaCheckout.value <= reservaCheckin.value) {
+        reservaCheckout.value = '';
+    }
+});
+
+reservaForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const habitacion = document.getElementById('reserva-habitacion').value;
+    const checkin = reservaCheckin.value;
+    const checkout = reservaCheckout.value;
+
+    reservaFeedback.textContent =
+        `¡Listo! Pediste reservar ${habitacion} del ${checkin} al ${checkout}. Te vamos a contactar para confirmar.`;
+
+    reservaForm.reset();
+    reservaCheckin.min = today;
+    reservaCheckout.min = today;
+});

@@ -29,6 +29,7 @@
                 <ul class="ul-menu">
                     <li class="li-menu"><a href="#nosotros">Nosotros</a></li>
                     <li class="li-menu"><a href="#habitaciones">Habitaciones</a></li>
+                    <li class="li-menu"><a href="#reservar">Reservar</a></li>
                     <li class="li-menu"><a href="#excurciones">Excurciones</a></li>
                     <li class="li-menu"><a href="#contactanos">Contactanos</a></li>
                 </ul>
@@ -86,6 +87,49 @@
                 <button type="button" class="room-modal-close" aria-label="Cerrar">&times;</button>
                 <img src="" alt="">
             </dialog>
+        </section>
+
+        <section class="reservar" id="reservar">
+            <h2>Reservá tu habitación</h2>
+            <form class="reserva-form" id="reserva-form">
+                <fieldset>
+                    <div class="reserva-grid">
+                        <div class="field-form">
+                            <label for="reserva-habitacion">Habitación</label>
+                            <select id="reserva-habitacion" name="habitacion" required>
+                                <option value="" disabled selected>Elegí una habitación</option>
+                                <option value="Habitación 1">Habitación 1</option>
+                                <option value="Habitación 2">Habitación 2</option>
+                                <option value="Habitación 3">Habitación 3</option>
+                                <option value="Habitación 4">Habitación 4</option>
+                            </select>
+                        </div>
+                        <div class="field-form">
+                            <label for="reserva-huespedes">Huéspedes</label>
+                            <input type="number" id="reserva-huespedes" name="huespedes" min="1" max="10" value="2" required>
+                        </div>
+                        <div class="field-form">
+                            <label for="reserva-checkin">Check-in</label>
+                            <input type="date" id="reserva-checkin" name="checkin" required>
+                        </div>
+                        <div class="field-form">
+                            <label for="reserva-checkout">Check-out</label>
+                            <input type="date" id="reserva-checkout" name="checkout" required>
+                        </div>
+                    </div>
+                    <div class="field-form">
+                        <label for="reserva-nombre">Nombre</label>
+                        <input type="text" id="reserva-nombre" name="nombre" required>
+                    </div>
+                    <div class="field-form">
+                        <label for="reserva-email">Mail</label>
+                        <input type="email" id="reserva-email" name="email" required>
+                    </div>
+                </fieldset>
+
+                <button type="submit">Reservar</button>
+                <p class="reserva-feedback" id="reserva-feedback" role="status"></p>
+            </form>
         </section>
 
         <section class="excursiones" id="excurciones">

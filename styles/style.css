@@ -369,6 +369,8 @@ h2 {
 
 .carousel {
     position: relative;
+    width: min(100%, 720px);
+    margin: 0 auto;
 }
 
 .carousel-viewport {
@@ -385,7 +387,7 @@ h2 {
 .carousel-track img {
     display: block;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 3 / 2;
     object-fit: cover;
     flex: 0 0 100%;
 }
@@ -479,7 +481,8 @@ fieldset {
 }
 
 .field-form input,
-.field-form textarea {
+.field-form textarea,
+.field-form select {
     width: 100%;
     padding: 10px 14px;
     border: 1px solid var(--line);
@@ -495,11 +498,46 @@ fieldset {
     resize: vertical;
 }
 
+.field-form select {
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, var(--accent) 50%), linear-gradient(135deg, var(--accent) 50%, transparent 50%);
+    background-position: right 18px center, right 12px center;
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+}
+
+.field-form select option {
+    color: var(--bg);
+}
+
+.field-form input[type="date"] {
+    color-scheme: dark;
+}
+
 input:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
     outline: none;
     border-color: var(--accent);
     background: rgba(212, 169, 74, 0.08);
+}
+
+.reserva-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 22px;
+    margin-bottom: 22px;
+}
+
+.reserva-feedback {
+    margin-top: 16px;
+    color: var(--accent);
+    font-size: 0.92rem;
+    text-align: center;
+}
+
+.reserva-feedback:empty {
+    display: none;
 }
 
 button {
