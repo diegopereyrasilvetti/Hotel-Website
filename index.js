@@ -28,10 +28,12 @@ const carouselNext = document.querySelector('.carousel-next');
 const carouselDots = document.querySelector('.carousel-dots');
 let carouselIndex = 0;
 
+const dotBaseClass = 'h-2 w-2 shrink-0 cursor-pointer rounded-full border-0 p-0 m-0 transition-all duration-200';
+
 carouselSlides.forEach((_, i) => {
     const dot = document.createElement('button');
     dot.type = 'button';
-    dot.className = 'carousel-dot';
+    dot.className = `${dotBaseClass} bg-white/35`;
     dot.setAttribute('aria-label', `Ir a la excursión ${i + 1}`);
     dot.addEventListener('click', () => goToSlide(i));
     carouselDots.appendChild(dot);
@@ -41,7 +43,10 @@ const dotButtons = Array.from(carouselDots.children);
 
 function updateCarousel() {
     carouselTrack.style.transform = `translateX(-${carouselIndex * 100}%)`;
-    dotButtons.forEach((dot, i) => dot.classList.toggle('active', i === carouselIndex));
+    dotButtons.forEach((dot, i) => {
+        const isActive = i === carouselIndex;
+        dot.className = `${dotBaseClass} ${isActive ? 'scale-125 bg-white' : 'bg-white/35'}`;
+    });
 }
 
 function goToSlide(i) {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth [scroll-padding-top:110px] max-[480px]:[scroll-padding-top:90px]">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,198 +11,233 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/style.css">
     <script src="https://kit.fontawesome.com/0609dfb132.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --color-bg: #0b0405;
+            --color-surface: #1a0b0c;
+            --color-maroon-900: #3d0407;
+            --color-accent: #d4a94a;
+            --font-sans: "Noto Sans", sans-serif;
+        }
+    </style>
 </head>
 
-<body>
-    <header>
-        <nav>
-            <a class="brand" href="#" aria-label="Hotel Bariloche - Inicio">
-                <img class="brand-icon" src="./images/logo sin fondo.png" alt="">
-                <h1>Hotel Bariloche</h1>
+<body class="min-h-screen overflow-x-hidden bg-bg bg-[radial-gradient(1100px_520px_at_10%_-10%,rgba(110,5,11,0.28),transparent_60%),radial-gradient(900px_460px_at_100%_0%,rgba(212,169,74,0.08),transparent_55%)] font-sans text-base leading-[1.75] text-white max-[480px]:text-[15px]">
+    <header class="sticky top-0 z-50 h-[76px] border-b border-white/[0.14] bg-gradient-to-br from-[rgba(122,6,13,0.95)] to-[rgba(61,4,7,0.92)] shadow-[0_8px_30px_rgba(0,0,0,0.35)] backdrop-blur-md max-[480px]:h-16">
+        <nav class="relative mx-auto flex h-full w-[min(1120px,calc(100%-40px))] items-center justify-between max-[480px]:w-[calc(100%-24px)]">
+            <a class="flex items-center gap-2.5 text-white no-underline" href="#" aria-label="Hotel Bariloche - Inicio">
+                <img class="h-11 w-auto shrink-0 object-contain max-[480px]:h-[34px]" src="./images/logo sin fondo.png" alt="">
+                <h1 class="text-2xl font-extrabold tracking-[-0.01em] text-white max-[1024px]:hidden">Hotel Bariloche</h1>
             </a>
-            <div class="nav-right">
-                <label class="label-menu" for="menu" aria-label="Abrir menú de navegación"><i class="fa-solid fa-bars" aria-hidden="true"></i></label>
-                <input type="checkbox" name="menu" id="menu">
-                <ul class="ul-menu">
-                    <li class="li-menu"><a href="#nosotros">Nosotros</a></li>
-                    <li class="li-menu"><a href="#habitaciones">Habitaciones</a></li>
-                    <li class="li-menu"><a href="#reservar">Reservar</a></li>
-                    <li class="li-menu"><a href="#excurciones">Excurciones</a></li>
-                    <li class="li-menu"><a href="#contactanos">Contactanos</a></li>
+            <div class="flex items-center gap-5">
+                <label class="grid h-[42px] w-[42px] cursor-pointer place-items-center rounded-full border border-white/[0.14] bg-white/5 text-white transition duration-200 hover:-translate-y-px hover:bg-white/[0.13] md:hidden max-[480px]:h-[38px] max-[480px]:w-[38px]" for="menu" aria-label="Abrir menú de navegación"><i class="fa-solid fa-bars" aria-hidden="true"></i></label>
+                <input class="peer absolute h-px w-px overflow-hidden opacity-0" type="checkbox" name="menu" id="menu">
+                <ul class="absolute left-0 top-full flex max-h-0 w-full flex-col items-center gap-1 overflow-hidden bg-[rgba(21,4,5,0.97)] transition-all duration-300 ease-in-out peer-checked:max-h-[220px] peer-checked:border-b peer-checked:border-white/[0.14] peer-checked:px-5 peer-checked:py-[18px] md:static md:flex md:w-auto md:max-h-none md:flex-row md:items-center md:gap-6 md:overflow-visible md:bg-transparent md:p-0">
+                    <li class="w-[min(100%,420px)] text-center md:w-auto">
+                        <a class="group relative block px-1 py-2 text-[0.98rem] font-semibold tracking-[0.02em] text-white/[0.82] transition-colors duration-200 hover:text-white" href="#nosotros">
+                            Nosotros
+                            <span class="pointer-events-none absolute inset-x-1 bottom-0.5 h-0.5 origin-left scale-x-0 bg-accent transition-transform duration-200 ease-out group-hover:scale-x-100"></span>
+                        </a>
+                    </li>
+                    <li class="w-[min(100%,420px)] text-center md:w-auto">
+                        <a class="group relative block px-1 py-2 text-[0.98rem] font-semibold tracking-[0.02em] text-white/[0.82] transition-colors duration-200 hover:text-white" href="#habitaciones">
+                            Habitaciones
+                            <span class="pointer-events-none absolute inset-x-1 bottom-0.5 h-0.5 origin-left scale-x-0 bg-accent transition-transform duration-200 ease-out group-hover:scale-x-100"></span>
+                        </a>
+                    </li>
+                    <li class="w-[min(100%,420px)] text-center md:w-auto">
+                        <a class="group relative block px-1 py-2 text-[0.98rem] font-semibold tracking-[0.02em] text-white/[0.82] transition-colors duration-200 hover:text-white" href="#reservar">
+                            Reservar
+                            <span class="pointer-events-none absolute inset-x-1 bottom-0.5 h-0.5 origin-left scale-x-0 bg-accent transition-transform duration-200 ease-out group-hover:scale-x-100"></span>
+                        </a>
+                    </li>
+                    <li class="w-[min(100%,420px)] text-center md:w-auto">
+                        <a class="group relative block px-1 py-2 text-[0.98rem] font-semibold tracking-[0.02em] text-white/[0.82] transition-colors duration-200 hover:text-white" href="#excurciones">
+                            Excurciones
+                            <span class="pointer-events-none absolute inset-x-1 bottom-0.5 h-0.5 origin-left scale-x-0 bg-accent transition-transform duration-200 ease-out group-hover:scale-x-100"></span>
+                        </a>
+                    </li>
+                    <li class="w-[min(100%,420px)] text-center md:w-auto">
+                        <a class="group relative block px-1 py-2 text-[0.98rem] font-semibold tracking-[0.02em] text-white/[0.82] transition-colors duration-200 hover:text-white" href="#contactanos">
+                            Contactanos
+                            <span class="pointer-events-none absolute inset-x-1 bottom-0.5 h-0.5 origin-left scale-x-0 bg-accent transition-transform duration-200 ease-out group-hover:scale-x-100"></span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <main>
-        <section class="nosotros" id="nosotros">
-            <img src="./images/descarga.jfif" alt="" class="pic">
-            <div>
-                <h2>Nosotros</h2>
-                <p><strong>Nuestra historia:</strong> Desde 1955, nuestra familia tiene el sueño de crear un lugar donde cada visitante pueda sentirse como en casa. Lo que comenzó como un pequeño proyecto familiar en el corazón de Bariloche, con el paso de los años se convirtió en una tradición que continúa hasta hoy.</p>
-                <p>Actualmente, somos los nietos de aquellos primeros fundadores quienes llevamos adelante el hotel, manteniendo vivos los mismos valores que nos acompañaron desde el comienzo: familia, unidad y hospitalidad.</p>
-                <p>Hoy, combinamos esa esencia familiar con instalaciones modernas, comodidades de primer nivel y una amplia variedad de servicios, pensados para brindar una experiencia segura, confortable y placentera.</p>
+    <div class="flex justify-center pt-[clamp(32px,6vw,56px)]">
+        <img class="w-full max-w-[420px] px-6 object-contain" src="./images/logo sin fondo.png" alt="Hotel Bariloche">
+    </div>
+
+    <main class="mx-auto flex w-[min(1120px,calc(100%-40px))] flex-col gap-[clamp(56px,8vw,96px)] py-[clamp(50px,8vw,100px)] pb-[100px]">
+        <section class="flex scroll-mt-[110px] flex-wrap-reverse items-center gap-[clamp(24px,5vw,48px)] rounded-[28px] border border-white/[0.14] bg-white/5 p-[clamp(32px,6vw,72px)] max-[768px]:p-7" id="nosotros">
+            <img class="w-full max-w-[420px] flex-1 basis-[320px] rounded-2xl object-cover shadow-[0_20px_45px_rgba(0,0,0,0.45)]" src="./images/descarga.jfif" alt="">
+            <div class="max-w-[790px] flex-1 basis-[420px]">
+                <h2 class="mb-[18px] text-[clamp(1.75rem,6vw,3.4rem)] font-bold leading-[1.12] tracking-[-0.035em] text-white">Nosotros</h2>
+                <p class="text-white/70"><strong>Nuestra historia:</strong> Desde 1955, nuestra familia tiene el sueño de crear un lugar donde cada visitante pueda sentirse como en casa. Lo que comenzó como un pequeño proyecto familiar en el corazón de Bariloche, con el paso de los años se convirtió en una tradición que continúa hasta hoy.</p>
+                <p class="mt-3.5 text-white/70">Actualmente, somos los nietos de aquellos primeros fundadores quienes llevamos adelante el hotel, manteniendo vivos los mismos valores que nos acompañaron desde el comienzo: familia, unidad y hospitalidad.</p>
+                <p class="mt-3.5 text-white/70">Hoy, combinamos esa esencia familiar con instalaciones modernas, comodidades de primer nivel y una amplia variedad de servicios, pensados para brindar una experiencia segura, confortable y placentera.</p>
             </div>
         </section>
 
-        <section>
-            <ul class="ulclass">
-                <li>Habitaciones confortables y totalmente equipadas.</li>
-                <li>Desayuno buffet incluido.</li>
-                <li>Servicio de cafetería y meriendas.</li>
-                <li>Restaurante y gastronomía regional.</li>
-                <li>Recepción y atención las 24 horas.</li>
-                <li>Wi-Fi gratuito en todo el hotel.</li>
-                <li>Servicio de limpieza diario.</li>
-                <li>Alquiler de autos.</li>
-                <li>Traslados desde y hacia el aeropuerto.</li>
-                <li>Organización y reserva de excursiones.</li>
-                <li>Actividades y experiencias turísticas.</li>
-                <li>Alquiler de bicicletas.</li>
-                <li>Servicios de spa y bienestar.</li>
-                <li>Estacionamiento privado.</li>
-                <li>Guarda de equipaje y servicio de conserjería.</li>
+        <section class="scroll-mt-[110px]">
+            <ul class="m-0 grid list-none grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-3.5 p-0">
+                <li class="flex items-start gap-2.5 rounded-[14px] border border-white/[0.14] bg-white/5 px-[18px] py-3.5 text-[0.96rem] text-white/70 transition duration-200 hover:-translate-y-0.5 hover:border-accent"><i class="fa-solid fa-check mt-1 shrink-0 text-xs font-extrabold text-accent" aria-hidden="true"></i>Habitaciones confortables y totalmente equipadas.</li>
+                <li class="flex items-start gap-2.5 rounded-[14px] border border-white/[0.14] bg-white/5 px-[18px] py-3.5 text-[0.96rem] text-white/70 transition duration-200 hover:-translate-y-0.5 hover:border-accent"><i class="fa-solid fa-check mt-1 shrink-0 text-xs font-extrabold text-accent" aria-hidden="true"></i>Desayuno buffet incluido.</li>
+                <li class="flex items-start gap-2.5 rounded-[14px] border border-white/[0.14] bg-white/5 px-[18px] py-3.5 text-[0.96rem] text-white/70 transition duration-200 hover:-translate-y-0.5 hover:border-accent"><i class="fa-solid fa-check mt-1 shrink-0 text-xs font-extrabold text-accent" aria-hidden="true"></i>Servicio de cafetería y meriendas.</li>
+                <li class="flex items-start gap-2.5 rounded-[14px] border border-white/[0.14] bg-white/5 px-[18px] py-3.5 text-[0.96rem] text-white/70 transition duration-200 hover:-translate-y-0.5 hover:border-accent"><i class="fa-solid fa-check mt-1 shrink-0 text-xs font-extrabold text-accent" aria-hidden="true"></i>Restaurante y gastronomía regional.</li>
+                <li class="flex items-start gap-2.5 rounded-[14px] border border-white/[0.14] bg-white/5 px-[18px] py-3.5 text-[0.96rem] text-white/70 transition duration-200 hover:-translate-y-0.5 hover:border-accent"><i class="fa-solid fa-check mt-1 shrink-0 text-xs font-extrabold text-accent" aria-hidden="true"></i>Recepción y atención las 24 horas.</li>
+                <li class="flex items-start gap-2.5 rounded-[14px] border border-white/[0.14] bg-white/5 px-[18px] py-3.5 text-[0.96rem] text-white/70 transition duration-200 hover:-translate-y-0.5 hover:border-accent"><i class="fa-solid fa-check mt-1 shrink-0 text-xs font-extrabold text-accent" aria-hidden="true"></i>Wi-Fi gratuito en todo el hotel.</li>
+                <li class="flex items-start gap-2.5 rounded-[14px] border border-white/[0.14] bg-white/5 px-[18px] py-3.5 text-[0.96rem] text-white/70 transition duration-200 hover:-translate-y-0.5 hover:border-accent"><i class="fa-solid fa-check mt-1 shrink-0 text-xs font-extrabold text-accent" aria-hidden="true"></i>Servicio de limpieza diario.</li>
+                <li class="flex items-start gap-2.5 rounded-[14px] border border-white/[0.14] bg-white/5 px-[18px] py-3.5 text-[0.96rem] text-white/70 transition duration-200 hover:-translate-y-0.5 hover:border-accent"><i class="fa-solid fa-check mt-1 shrink-0 text-xs font-extrabold text-accent" aria-hidden="true"></i>Alquiler de autos.</li>
+                <li class="flex items-start gap-2.5 rounded-[14px] border border-white/[0.14] bg-white/5 px-[18px] py-3.5 text-[0.96rem] text-white/70 transition duration-200 hover:-translate-y-0.5 hover:border-accent"><i class="fa-solid fa-check mt-1 shrink-0 text-xs font-extrabold text-accent" aria-hidden="true"></i>Traslados desde y hacia el aeropuerto.</li>
+                <li class="flex items-start gap-2.5 rounded-[14px] border border-white/[0.14] bg-white/5 px-[18px] py-3.5 text-[0.96rem] text-white/70 transition duration-200 hover:-translate-y-0.5 hover:border-accent"><i class="fa-solid fa-check mt-1 shrink-0 text-xs font-extrabold text-accent" aria-hidden="true"></i>Organización y reserva de excursiones.</li>
+                <li class="flex items-start gap-2.5 rounded-[14px] border border-white/[0.14] bg-white/5 px-[18px] py-3.5 text-[0.96rem] text-white/70 transition duration-200 hover:-translate-y-0.5 hover:border-accent"><i class="fa-solid fa-check mt-1 shrink-0 text-xs font-extrabold text-accent" aria-hidden="true"></i>Actividades y experiencias turísticas.</li>
+                <li class="flex items-start gap-2.5 rounded-[14px] border border-white/[0.14] bg-white/5 px-[18px] py-3.5 text-[0.96rem] text-white/70 transition duration-200 hover:-translate-y-0.5 hover:border-accent"><i class="fa-solid fa-check mt-1 shrink-0 text-xs font-extrabold text-accent" aria-hidden="true"></i>Alquiler de bicicletas.</li>
+                <li class="flex items-start gap-2.5 rounded-[14px] border border-white/[0.14] bg-white/5 px-[18px] py-3.5 text-[0.96rem] text-white/70 transition duration-200 hover:-translate-y-0.5 hover:border-accent"><i class="fa-solid fa-check mt-1 shrink-0 text-xs font-extrabold text-accent" aria-hidden="true"></i>Servicios de spa y bienestar.</li>
+                <li class="flex items-start gap-2.5 rounded-[14px] border border-white/[0.14] bg-white/5 px-[18px] py-3.5 text-[0.96rem] text-white/70 transition duration-200 hover:-translate-y-0.5 hover:border-accent"><i class="fa-solid fa-check mt-1 shrink-0 text-xs font-extrabold text-accent" aria-hidden="true"></i>Estacionamiento privado.</li>
+                <li class="flex items-start gap-2.5 rounded-[14px] border border-white/[0.14] bg-white/5 px-[18px] py-3.5 text-[0.96rem] text-white/70 transition duration-200 hover:-translate-y-0.5 hover:border-accent"><i class="fa-solid fa-check mt-1 shrink-0 text-xs font-extrabold text-accent" aria-hidden="true"></i>Guarda de equipaje y servicio de conserjería.</li>
             </ul>
         </section>
-        <section class="habitaciones" id="habitaciones">
-            <h2>Habitaciones</h2>
-            <div class="habitaciones-grid">
-                <button type="button" class="room-card" data-img="./images/habitacion 1.jpg" data-alt="Habitación 1" aria-label="Ver habitación 1 en grande">
-                    <img src="./images/habitacion 1.jpg" alt="Habitación 1">
+
+        <section class="scroll-mt-[110px]" id="habitaciones">
+            <h2 class="mb-[18px] text-[clamp(1.75rem,6vw,3.4rem)] font-bold leading-[1.12] tracking-[-0.035em] text-white">Habitaciones</h2>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-5">
+                <button type="button" class="room-card block overflow-hidden rounded-2xl border border-white/[0.14] bg-white/5 p-0 transition duration-200 hover:-translate-y-1 hover:border-accent hover:shadow-[0_14px_32px_rgba(0,0,0,0.4)] focus-visible:-translate-y-1 focus-visible:border-accent" data-img="./images/habitacion 1.jpg" data-alt="Habitación 1" aria-label="Ver habitación 1 en grande">
+                    <img class="block aspect-[4/3] w-full object-cover" src="./images/habitacion 1.jpg" alt="Habitación 1">
                 </button>
-                <button type="button" class="room-card" data-img="./images/habitacion 2.jpg" data-alt="Habitación 2" aria-label="Ver habitación 2 en grande">
-                    <img src="./images/habitacion 2.jpg" alt="Habitación 2">
+                <button type="button" class="room-card block overflow-hidden rounded-2xl border border-white/[0.14] bg-white/5 p-0 transition duration-200 hover:-translate-y-1 hover:border-accent hover:shadow-[0_14px_32px_rgba(0,0,0,0.4)] focus-visible:-translate-y-1 focus-visible:border-accent" data-img="./images/habitacion 2.jpg" data-alt="Habitación 2" aria-label="Ver habitación 2 en grande">
+                    <img class="block aspect-[4/3] w-full object-cover" src="./images/habitacion 2.jpg" alt="Habitación 2">
                 </button>
-                <button type="button" class="room-card" data-img="./images/habitacion 3.jfif" data-alt="Habitación 3" aria-label="Ver habitación 3 en grande">
-                    <img src="./images/habitacion 3.jfif" alt="Habitación 3">
+                <button type="button" class="room-card block overflow-hidden rounded-2xl border border-white/[0.14] bg-white/5 p-0 transition duration-200 hover:-translate-y-1 hover:border-accent hover:shadow-[0_14px_32px_rgba(0,0,0,0.4)] focus-visible:-translate-y-1 focus-visible:border-accent" data-img="./images/habitacion 3.jfif" data-alt="Habitación 3" aria-label="Ver habitación 3 en grande">
+                    <img class="block aspect-[4/3] w-full object-cover" src="./images/habitacion 3.jfif" alt="Habitación 3">
                 </button>
-                <button type="button" class="room-card" data-img="./images/habitacion 4.jfif" data-alt="Habitación 4" aria-label="Ver habitación 4 en grande">
-                    <img src="./images/habitacion 4.jfif" alt="Habitación 4">
+                <button type="button" class="room-card block overflow-hidden rounded-2xl border border-white/[0.14] bg-white/5 p-0 transition duration-200 hover:-translate-y-1 hover:border-accent hover:shadow-[0_14px_32px_rgba(0,0,0,0.4)] focus-visible:-translate-y-1 focus-visible:border-accent" data-img="./images/habitacion 4.jfif" data-alt="Habitación 4" aria-label="Ver habitación 4 en grande">
+                    <img class="block aspect-[4/3] w-full object-cover" src="./images/habitacion 4.jfif" alt="Habitación 4">
                 </button>
             </div>
-            <dialog class="room-modal">
-                <button type="button" class="room-modal-close" aria-label="Cerrar">&times;</button>
-                <img src="" alt="">
+            <dialog class="room-modal fixed top-1/2 left-1/2 m-0 max-h-[85vh] max-w-[min(90vw,900px)] -translate-x-1/2 -translate-y-1/2 rounded-2xl border-0 bg-transparent p-0 [&::backdrop]:bg-black/75 [&::backdrop]:backdrop-blur-[2px]">
+                <button type="button" class="room-modal-close absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full border border-white/[0.14] bg-black/60 text-xl leading-none text-white transition-colors duration-200 hover:bg-black/85" aria-label="Cerrar">&times;</button>
+                <img class="block max-h-[85vh] w-full rounded-2xl object-contain" src="" alt="">
             </dialog>
         </section>
 
-        <section class="reservar" id="reservar">
-            <h2>Reservá tu habitación</h2>
-            <form class="reserva-form" id="reserva-form">
-                <fieldset>
-                    <div class="reserva-grid">
-                        <div class="field-form">
-                            <label for="reserva-habitacion">Habitación</label>
-                            <select id="reserva-habitacion" name="habitacion" required>
-                                <option value="" disabled selected>Elegí una habitación</option>
-                                <option value="Habitación 1">Habitación 1</option>
-                                <option value="Habitación 2">Habitación 2</option>
-                                <option value="Habitación 3">Habitación 3</option>
-                                <option value="Habitación 4">Habitación 4</option>
-                            </select>
+        <section class="scroll-mt-[110px]" id="reservar">
+            <h2 class="mb-[18px] text-[clamp(1.75rem,6vw,3.4rem)] font-bold leading-[1.12] tracking-[-0.035em] text-white">Reservá tu habitación</h2>
+            <form class="mt-[30px] rounded-[24px] border border-white/[0.14] bg-white/5 p-[clamp(24px,5vw,48px)] max-[768px]:p-6" id="reserva-form">
+                <fieldset class="m-0 grid gap-[22px] border-0 p-0">
+                    <div class="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-[22px]">
+                        <div class="flex flex-col gap-[7px]">
+                            <label class="text-[0.9rem] font-bold tracking-[0.035em] text-white/[0.82]" for="reserva-habitacion">Habitación</label>
+                            <div class="relative">
+                                <select class="w-full appearance-none rounded-xl border border-white/[0.14] bg-white/[0.06] px-3.5 py-2.5 pr-9 text-white transition duration-200 focus:border-accent focus:bg-accent/10 focus:outline-none" id="reserva-habitacion" name="habitacion" required>
+                                    <option value="" disabled selected>Elegí una habitación</option>
+                                    <option value="Habitación 1">Habitación 1</option>
+                                    <option value="Habitación 2">Habitación 2</option>
+                                    <option value="Habitación 3">Habitación 3</option>
+                                    <option value="Habitación 4">Habitación 4</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[10px] text-accent" aria-hidden="true"></i>
+                            </div>
                         </div>
-                        <div class="field-form">
-                            <label for="reserva-huespedes">Huéspedes</label>
-                            <input type="number" id="reserva-huespedes" name="huespedes" min="1" max="10" value="2" required>
+                        <div class="flex flex-col gap-[7px]">
+                            <label class="text-[0.9rem] font-bold tracking-[0.035em] text-white/[0.82]" for="reserva-huespedes">Huéspedes</label>
+                            <input class="w-full rounded-xl border border-white/[0.14] bg-white/[0.06] px-3.5 py-2.5 text-white transition duration-200 focus:border-accent focus:bg-accent/10 focus:outline-none" type="number" id="reserva-huespedes" name="huespedes" min="1" max="10" value="2" required>
                         </div>
-                        <div class="field-form">
-                            <label for="reserva-checkin">Check-in</label>
-                            <input type="date" id="reserva-checkin" name="checkin" required>
+                        <div class="flex flex-col gap-[7px]">
+                            <label class="text-[0.9rem] font-bold tracking-[0.035em] text-white/[0.82]" for="reserva-checkin">Check-in</label>
+                            <input class="w-full rounded-xl border border-white/[0.14] bg-white/[0.06] px-3.5 py-2.5 text-white transition duration-200 [color-scheme:dark] focus:border-accent focus:bg-accent/10 focus:outline-none" type="date" id="reserva-checkin" name="checkin" required>
                         </div>
-                        <div class="field-form">
-                            <label for="reserva-checkout">Check-out</label>
-                            <input type="date" id="reserva-checkout" name="checkout" required>
+                        <div class="flex flex-col gap-[7px]">
+                            <label class="text-[0.9rem] font-bold tracking-[0.035em] text-white/[0.82]" for="reserva-checkout">Check-out</label>
+                            <input class="w-full rounded-xl border border-white/[0.14] bg-white/[0.06] px-3.5 py-2.5 text-white transition duration-200 [color-scheme:dark] focus:border-accent focus:bg-accent/10 focus:outline-none" type="date" id="reserva-checkout" name="checkout" required>
                         </div>
                     </div>
-                    <div class="field-form">
-                        <label for="reserva-nombre">Nombre</label>
-                        <input type="text" id="reserva-nombre" name="nombre" required>
+                    <div class="flex flex-col gap-[7px]">
+                        <label class="text-[0.9rem] font-bold tracking-[0.035em] text-white/[0.82]" for="reserva-nombre">Nombre</label>
+                        <input class="w-full rounded-xl border border-white/[0.14] bg-white/[0.06] px-3.5 py-2.5 text-white transition duration-200 focus:border-accent focus:bg-accent/10 focus:outline-none" type="text" id="reserva-nombre" name="nombre" required>
                     </div>
-                    <div class="field-form">
-                        <label for="reserva-email">Mail</label>
-                        <input type="email" id="reserva-email" name="email" required>
+                    <div class="flex flex-col gap-[7px]">
+                        <label class="text-[0.9rem] font-bold tracking-[0.035em] text-white/[0.82]" for="reserva-email">Mail</label>
+                        <input class="w-full rounded-xl border border-white/[0.14] bg-white/[0.06] px-3.5 py-2.5 text-white transition duration-200 focus:border-accent focus:bg-accent/10 focus:outline-none" type="email" id="reserva-email" name="email" required>
                     </div>
                 </fieldset>
 
-                <button type="submit">Reservar</button>
-                <p class="reserva-feedback" id="reserva-feedback" role="status"></p>
+                <button class="mx-auto mt-7 flex min-h-12 w-[min(190px,100%)] items-center justify-center rounded-full border border-transparent bg-accent font-extrabold text-bg transition duration-200 hover:-translate-y-0.5 hover:bg-[#e6bd63] hover:shadow-[0_10px_26px_rgba(0,0,0,0.35)] max-[480px]:w-full" type="submit">Reservar</button>
+                <p class="reserva-feedback mt-4 text-center text-[0.92rem] text-accent empty:hidden" id="reserva-feedback" role="status"></p>
             </form>
         </section>
 
-        <section class="excursiones" id="excurciones">
-            <h2>Excurciones</h2>
-            <div class="carousel">
-                <button type="button" class="carousel-btn carousel-prev" aria-label="Excursión anterior">&#10094;</button>
-                <div class="carousel-viewport">
-                    <div class="carousel-track">
-                        <img src="./images/excurcion/excurcion1.webp" alt="excurcion1">
-                        <img src="./images/excurcion/excurciones2.jpg" alt="excurcion2">
-                        <img src="./images/excurcion/excurciones3.jfif" alt="excurcion3">
-                        <img src="./images/excurcion/excurcion4.jpg" alt="excurcion4">
-                        <img src="./images/excurcion/excurcion5.jpg" alt="excurcion5">
-                        <img src="./images/excurcion/excurcion6.jfif" alt="excurcion6">
-                        <img src="./images/excurcion/excurcion7.webp" alt="excurcion7">
-                        <img src="./images/excurcion/excurcion8.jpg" alt="excurcion8">
-                        <img src="./images/excurcion/excurcion9.jfif" alt="excurcion9">
-                        <img src="./images/excurcion/excurcion10.jfif" alt="excurcion10">
-                        <img src="./images/excurcion/excurcion11.avif" alt="excurcion11">
-                        <img src="./images/excurcion/excurcion12.jfif" alt="excurcion12">
+        <section class="scroll-mt-[110px]" id="excurciones">
+            <h2 class="mb-[18px] text-[clamp(1.75rem,6vw,3.4rem)] font-bold leading-[1.12] tracking-[-0.035em] text-white">Excurciones</h2>
+            <div class="carousel relative mx-auto w-[min(100%,720px)]">
+                <button type="button" class="carousel-btn carousel-prev absolute left-4 top-1/2 z-10 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full border border-white/25 bg-bg/55 text-[1.1rem] text-white backdrop-blur-md transition duration-200 hover:scale-105 hover:border-accent hover:bg-black/75" aria-label="Excursión anterior">&#10094;</button>
+                <div class="overflow-hidden rounded-[24px] shadow-[0_24px_60px_rgba(0,0,0,0.5)]">
+                    <div class="carousel-track flex transition-transform duration-500 ease-[cubic-bezier(0.65,0,0.35,1)]">
+                        <img class="block aspect-[3/2] w-full shrink-0 grow-0 basis-full object-cover" src="./images/excurcion/excurcion1.webp" alt="excurcion1">
+                        <img class="block aspect-[3/2] w-full shrink-0 grow-0 basis-full object-cover" src="./images/excurcion/excurciones2.jpg" alt="excurcion2">
+                        <img class="block aspect-[3/2] w-full shrink-0 grow-0 basis-full object-cover" src="./images/excurcion/excurciones3.jfif" alt="excurcion3">
+                        <img class="block aspect-[3/2] w-full shrink-0 grow-0 basis-full object-cover" src="./images/excurcion/excurcion4.jpg" alt="excurcion4">
+                        <img class="block aspect-[3/2] w-full shrink-0 grow-0 basis-full object-cover" src="./images/excurcion/excurcion5.jpg" alt="excurcion5">
+                        <img class="block aspect-[3/2] w-full shrink-0 grow-0 basis-full object-cover" src="./images/excurcion/excurcion6.jfif" alt="excurcion6">
+                        <img class="block aspect-[3/2] w-full shrink-0 grow-0 basis-full object-cover" src="./images/excurcion/excurcion7.webp" alt="excurcion7">
+                        <img class="block aspect-[3/2] w-full shrink-0 grow-0 basis-full object-cover" src="./images/excurcion/excurcion8.jpg" alt="excurcion8">
+                        <img class="block aspect-[3/2] w-full shrink-0 grow-0 basis-full object-cover" src="./images/excurcion/excurcion9.jfif" alt="excurcion9">
+                        <img class="block aspect-[3/2] w-full shrink-0 grow-0 basis-full object-cover" src="./images/excurcion/excurcion10.jfif" alt="excurcion10">
+                        <img class="block aspect-[3/2] w-full shrink-0 grow-0 basis-full object-cover" src="./images/excurcion/excurcion11.avif" alt="excurcion11">
+                        <img class="block aspect-[3/2] w-full shrink-0 grow-0 basis-full object-cover" src="./images/excurcion/excurcion12.jfif" alt="excurcion12">
                     </div>
                 </div>
-                <button type="button" class="carousel-btn carousel-next" aria-label="Siguiente excursión">&#10095;</button>
+                <button type="button" class="carousel-btn carousel-next absolute right-4 top-1/2 z-10 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full border border-white/25 bg-bg/55 text-[1.1rem] text-white backdrop-blur-md transition duration-200 hover:scale-105 hover:border-accent hover:bg-black/75" aria-label="Siguiente excursión">&#10095;</button>
             </div>
-            <div class="carousel-dots"></div>
+            <div class="carousel-dots mt-5 flex justify-center gap-2"></div>
         </section>
 
-        <section id="contactanos">
-            <h2>Contactanos</h2>
-            <form method="post" action="/">
-                <fieldset>
-                    <div class="field-form">
-                        <label for="name">
-                        Nombre:
-                        </label>
-                        <input type="text" id="name" name="name" required>
+        <section class="scroll-mt-[110px]" id="contactanos">
+            <h2 class="mb-[18px] text-[clamp(1.75rem,6vw,3.4rem)] font-bold leading-[1.12] tracking-[-0.035em] text-white">Contactanos</h2>
+            <form class="mt-[30px] rounded-[24px] border border-white/[0.14] bg-white/5 p-[clamp(24px,5vw,48px)] max-[768px]:p-6" method="post" action="/">
+                <fieldset class="m-0 grid gap-[22px] border-0 p-0">
+                    <div class="flex flex-col gap-[7px]">
+                        <label class="text-[0.9rem] font-bold tracking-[0.035em] text-white/[0.82]" for="name">Nombre:</label>
+                        <input class="w-full rounded-xl border border-white/[0.14] bg-white/[0.06] px-3.5 py-2.5 text-white transition duration-200 focus:border-accent focus:bg-accent/10 focus:outline-none" type="text" id="name" name="name" required>
                     </div>
-                    <div class="field-form">
-                        <label for="email">
-                            Mail:
-                        </label>
-                        <input type="email" id="email" name="email" required>
+                    <div class="flex flex-col gap-[7px]">
+                        <label class="text-[0.9rem] font-bold tracking-[0.035em] text-white/[0.82]" for="email">Mail:</label>
+                        <input class="w-full rounded-xl border border-white/[0.14] bg-white/[0.06] px-3.5 py-2.5 text-white transition duration-200 focus:border-accent focus:bg-accent/10 focus:outline-none" type="email" id="email" name="email" required>
                     </div>
-                    <div class="field-form">
-                        <label for="message">
-                            Mensaje:
-                        </label>
-                        <textarea name="message" id="message"></textarea>
+                    <div class="flex flex-col gap-[7px]">
+                        <label class="text-[0.9rem] font-bold tracking-[0.035em] text-white/[0.82]" for="message">Mensaje:</label>
+                        <textarea class="min-h-[120px] w-full resize-y rounded-xl border border-white/[0.14] bg-white/[0.06] px-3.5 py-2.5 text-white transition duration-200 focus:border-accent focus:bg-accent/10 focus:outline-none" name="message" id="message"></textarea>
                     </div>
                 </fieldset>
 
-                <button type="submit">Enviar</button>
+                <button class="mx-auto mt-7 flex min-h-12 w-[min(190px,100%)] items-center justify-center rounded-full border border-transparent bg-accent font-extrabold text-bg transition duration-200 hover:-translate-y-0.5 hover:bg-[#e6bd63] hover:shadow-[0_10px_26px_rgba(0,0,0,0.35)] max-[480px]:w-full" type="submit">Enviar</button>
             </form>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="footer-container">
+    <footer class="flex min-h-[90px] flex-wrap items-center justify-center gap-x-7 gap-y-3.5 border-t border-white/[0.14] bg-surface px-5 py-8">
+        <div class="mx-auto flex w-[min(1120px,calc(100%-40px))] flex-wrap items-start justify-between gap-x-12 gap-y-6 max-[768px]:flex-col max-[768px]:items-center max-[768px]:text-center">
 
-            <div class="footer-brand">
-                <h2>Hotel Bariloche</h2>
-                <p>Desde 1955</p>
-                <p>
+            <div class="min-w-[260px] flex-1">
+                <h2 class="mb-1.5 text-2xl font-bold text-white">Hotel Bariloche</h2>
+                <p class="text-white/70">Desde 1955</p>
+                <p class="text-white/70">
                     Tradición familiar, hospitalidad y el confort
                     que necesitás para disfrutar de Bariloche.
                 </p>
             </div>
 
-            <div class="footer-contact">
-                <h3>Contacto</h3>
-                <p>📍 Bariloche, Río Negro, Argentina</p>
-                <p>📞 +54 294 XXX-XXXX</p>
-                <p>✉️ reservas@hotelbariloche.com</p>
+            <div class="min-w-[260px] flex-1">
+                <h3 class="mb-2.5 text-[1.05rem] font-bold text-white">Contacto</h3>
+                <p class="text-white/70">📍 Bariloche, Río Negro, Argentina</p>
+                <p class="text-white/70">📞 +54 294 XXX-XXXX</p>
+                <p class="text-white/70">✉️ reservas@hotelbariloche.com</p>
             </div>
 
         </div>
