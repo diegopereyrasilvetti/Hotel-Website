@@ -67,16 +67,10 @@ nav {
 }
 
 .brand-icon {
-    display: grid;
-    width: 38px;
-    height: 38px;
+    width: auto;
+    height: 44px;
     flex-shrink: 0;
-    place-items: center;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent), #8a6a1f);
-    color: var(--maroon-900);
-    font-size: 0.95rem;
-    box-shadow: 0 4px 14px rgba(212, 169, 74, 0.35);
+    object-fit: contain;
 }
 
 h1 {
@@ -636,14 +630,16 @@ footer {
     }
 }
 
+@media (max-width: 1024px) {
+    .brand h1 {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
     .nosotros {
         min-height: auto;
         padding: 28px 20px;
-    }
-
-    h1 {
-        font-size: 20px;
     }
 
     h2 {
@@ -675,14 +671,8 @@ footer {
         width: calc(100% - 24px);
     }
 
-    h1 {
-        font-size: 18px;
-    }
-
     .brand-icon {
-        width: 32px;
-        height: 32px;
-        font-size: 0.8rem;
+        height: 34px;
     }
 
     .label-menu {
