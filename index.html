@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Bariloche</title>
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#050608">
+    <meta name="theme-color" content="#070d12">
     <meta name="color-scheme" content="dark">
     <meta name="description" content="hotelbariloche">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,17 +15,17 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style type="text/tailwindcss">
         @theme {
-            --color-bg: #0b0405;
-            --color-surface: #1a0b0c;
-            --color-maroon-900: #3d0407;
-            --color-accent: #d4a94a;
+            --color-bg: #070d12;
+            --color-surface: #101a22;
+            --color-maroon-900: #0a2436;
+            --color-accent: #cda45a;
             --font-sans: "Noto Sans", sans-serif;
         }
     </style>
 </head>
 
-<body class="min-h-screen overflow-x-hidden bg-bg bg-[radial-gradient(1100px_520px_at_10%_-10%,rgba(110,5,11,0.28),transparent_60%),radial-gradient(900px_460px_at_100%_0%,rgba(212,169,74,0.08),transparent_55%)] font-sans text-base leading-[1.75] text-white max-[480px]:text-[15px]">
-    <header class="sticky top-0 z-50 h-[76px] border-b border-white/[0.14] bg-gradient-to-br from-[rgba(122,6,13,0.95)] to-[rgba(61,4,7,0.92)] shadow-[0_8px_30px_rgba(0,0,0,0.35)] backdrop-blur-md max-[480px]:h-16">
+<body class="min-h-screen overflow-x-hidden bg-bg bg-[radial-gradient(1100px_520px_at_10%_-10%,rgba(20,70,95,0.30),transparent_60%),radial-gradient(900px_460px_at_100%_0%,rgba(205,164,90,0.08),transparent_55%)] font-sans text-base leading-[1.75] text-white max-[480px]:text-[15px]">
+    <header class="sticky top-0 z-50 h-[76px] border-b border-white/[0.14] bg-gradient-to-br from-[rgba(13,45,64,0.95)] to-[rgba(7,15,22,0.94)] shadow-[0_8px_30px_rgba(0,0,0,0.35)] backdrop-blur-md max-[480px]:h-16">
         <nav class="relative mx-auto flex h-full w-[min(1120px,calc(100%-40px))] items-center justify-between max-[480px]:w-[calc(100%-24px)]">
             <a class="flex items-center gap-2.5 text-white no-underline" href="#" aria-label="Hotel Bariloche - Inicio">
                 <img class="h-11 w-auto shrink-0 object-contain max-[480px]:h-[34px]" src="./images/logo sin fondo.png" alt="">
@@ -34,7 +34,7 @@
             <div class="flex items-center gap-5">
                 <label class="grid h-[42px] w-[42px] cursor-pointer place-items-center rounded-full border border-white/[0.14] bg-white/5 text-white transition duration-200 hover:-translate-y-px hover:bg-white/[0.13] md:hidden max-[480px]:h-[38px] max-[480px]:w-[38px]" for="menu" aria-label="Abrir menú de navegación"><i class="fa-solid fa-bars" aria-hidden="true"></i></label>
                 <input class="peer absolute h-px w-px overflow-hidden opacity-0" type="checkbox" name="menu" id="menu">
-                <ul class="absolute left-0 top-full flex max-h-0 w-full flex-col items-center gap-1 overflow-hidden bg-[rgba(21,4,5,0.97)] transition-all duration-300 ease-in-out peer-checked:max-h-[220px] peer-checked:border-b peer-checked:border-white/[0.14] peer-checked:px-5 peer-checked:py-[18px] md:static md:flex md:w-auto md:max-h-none md:flex-row md:items-center md:gap-6 md:overflow-visible md:bg-transparent md:p-0">
+                <ul class="absolute left-0 top-full flex max-h-0 w-full flex-col items-center gap-1 overflow-hidden bg-[rgba(7,14,20,0.97)] transition-all duration-300 ease-in-out peer-checked:max-h-[220px] peer-checked:border-b peer-checked:border-white/[0.14] peer-checked:px-5 peer-checked:py-[18px] md:static md:flex md:w-auto md:max-h-none md:flex-row md:items-center md:gap-6 md:overflow-visible md:bg-transparent md:p-0">
                     <li class="w-[min(100%,420px)] text-center md:w-auto">
                         <a class="group relative block px-1 py-2 text-[0.98rem] font-semibold tracking-[0.02em] text-white/[0.82] transition-colors duration-200 hover:text-white" href="#nosotros">
                             Nosotros
@@ -75,11 +75,18 @@
     </div>
 
     <main class="mx-auto flex w-[min(1120px,calc(100%-40px))] flex-col gap-[clamp(56px,8vw,96px)] py-[clamp(50px,8vw,100px)] pb-[100px]">
-        <section>
-            <img src="./images/portada 1.jfif" alt="">
-            <img src="./images/portada 2.jfif" alt="">
-            <img src="./images/portada3.jfif" alt="">
-            <img src="./images/portada4.jfif" alt="">
+        <section class="scroll-mt-[110px]">
+            <div class="hero-carousel relative mx-auto w-full overflow-hidden rounded-[28px] shadow-[0_24px_60px_rgba(0,0,0,0.5)]">
+                <div class="hero-carousel-track flex transition-transform duration-700 ease-[cubic-bezier(0.65,0,0.35,1)]">
+                    <img class="block aspect-[16/9] w-full shrink-0 grow-0 basis-full object-cover max-[768px]:aspect-[4/3]" src="./images/portada 1.jfif" alt="">
+                    <img class="block aspect-[16/9] w-full shrink-0 grow-0 basis-full object-cover max-[768px]:aspect-[4/3]" src="./images/portada 2.jfif" alt="">
+                    <img class="block aspect-[16/9] w-full shrink-0 grow-0 basis-full object-cover max-[768px]:aspect-[4/3]" src="./images/portada3.jfif" alt="">
+                    <img class="block aspect-[16/9] w-full shrink-0 grow-0 basis-full object-cover max-[768px]:aspect-[4/3]" src="./images/portada4.jfif" alt="">
+                </div>
+                <button type="button" class="hero-carousel-prev absolute left-4 top-1/2 z-10 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full border border-white/25 bg-bg/55 text-[1.1rem] text-white backdrop-blur-md transition duration-200 hover:scale-105 hover:border-accent hover:bg-black/75" aria-label="Imagen anterior">&#10094;</button>
+                <button type="button" class="hero-carousel-next absolute right-4 top-1/2 z-10 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full border border-white/25 bg-bg/55 text-[1.1rem] text-white backdrop-blur-md transition duration-200 hover:scale-105 hover:border-accent hover:bg-black/75" aria-label="Siguiente imagen">&#10095;</button>
+                <div class="hero-carousel-dots absolute inset-x-0 bottom-4 flex justify-center gap-2"></div>
+            </div>
         </section>
         <section class="flex scroll-mt-[110px] flex-wrap-reverse items-center gap-[clamp(24px,5vw,48px)] rounded-[28px] border border-white/[0.14] bg-white/5 p-[clamp(32px,6vw,72px)] max-[768px]:p-7" id="nosotros">
             <img class="w-full max-w-[420px] flex-1 basis-[320px] rounded-2xl object-cover shadow-[0_20px_45px_rgba(0,0,0,0.45)]" src="./images/descarga.jfif" alt="">
@@ -175,7 +182,7 @@
                     </div>
                 </fieldset>
 
-                <button class="mx-auto mt-7 flex min-h-12 w-[min(190px,100%)] items-center justify-center rounded-full border border-transparent bg-accent font-extrabold text-bg transition duration-200 hover:-translate-y-0.5 hover:bg-[#e6bd63] hover:shadow-[0_10px_26px_rgba(0,0,0,0.35)] max-[480px]:w-full" type="submit">Reservar</button>
+                <button class="mx-auto mt-7 flex min-h-12 w-[min(190px,100%)] items-center justify-center rounded-full border border-transparent bg-accent font-extrabold text-bg transition duration-200 hover:-translate-y-0.5 hover:bg-[#ddbd7e] hover:shadow-[0_10px_26px_rgba(0,0,0,0.35)] max-[480px]:w-full" type="submit">Reservar</button>
                 <p class="reserva-feedback mt-4 text-center text-[0.92rem] text-accent empty:hidden" id="reserva-feedback" role="status"></p>
             </form>
         </section>
@@ -223,7 +230,7 @@
                     </div>
                 </fieldset>
 
-                <button class="mx-auto mt-7 flex min-h-12 w-[min(190px,100%)] items-center justify-center rounded-full border border-transparent bg-accent font-extrabold text-bg transition duration-200 hover:-translate-y-0.5 hover:bg-[#e6bd63] hover:shadow-[0_10px_26px_rgba(0,0,0,0.35)] max-[480px]:w-full" type="submit">Enviar</button>
+                <button class="mx-auto mt-7 flex min-h-12 w-[min(190px,100%)] items-center justify-center rounded-full border border-transparent bg-accent font-extrabold text-bg transition duration-200 hover:-translate-y-0.5 hover:bg-[#ddbd7e] hover:shadow-[0_10px_26px_rgba(0,0,0,0.35)] max-[480px]:w-full" type="submit">Enviar</button>
             </form>
         </section>
     </main>
