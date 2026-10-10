@@ -214,24 +214,30 @@
 
         <section class="scroll-mt-[110px]" id="contactanos">
             <h2 class="mb-[18px] text-[clamp(1.75rem,6vw,3.4rem)] font-bold leading-[1.12] tracking-[-0.035em] text-white">Contactanos</h2>
-            <form class="mt-[30px] rounded-[24px] border border-white/[0.14] bg-white/5 p-[clamp(24px,5vw,48px)] max-[768px]:p-6" method="post" action="/">
-                <fieldset class="m-0 grid gap-[22px] border-0 p-0">
-                    <div class="flex flex-col gap-[7px]">
-                        <label class="text-[0.9rem] font-bold tracking-[0.035em] text-white/[0.82]" for="name">Nombre:</label>
-                        <input class="w-full rounded-xl border border-white/[0.14] bg-white/[0.06] px-3.5 py-2.5 text-white transition duration-200 focus:border-accent focus:bg-accent/10 focus:outline-none" type="text" id="name" name="name" required>
-                    </div>
-                    <div class="flex flex-col gap-[7px]">
-                        <label class="text-[0.9rem] font-bold tracking-[0.035em] text-white/[0.82]" for="email">Mail:</label>
-                        <input class="w-full rounded-xl border border-white/[0.14] bg-white/[0.06] px-3.5 py-2.5 text-white transition duration-200 focus:border-accent focus:bg-accent/10 focus:outline-none" type="email" id="email" name="email" required>
-                    </div>
-                    <div class="flex flex-col gap-[7px]">
-                        <label class="text-[0.9rem] font-bold tracking-[0.035em] text-white/[0.82]" for="message">Mensaje:</label>
-                        <textarea class="min-h-[120px] w-full resize-y rounded-xl border border-white/[0.14] bg-white/[0.06] px-3.5 py-2.5 text-white transition duration-200 focus:border-accent focus:bg-accent/10 focus:outline-none" name="message" id="message"></textarea>
-                    </div>
-                </fieldset>
+            <div class="flex flex-wrap gap-[clamp(24px,5vw,48px)]">
+                <form class="mt-[30px] flex-1 basis-[360px] rounded-[24px] border border-white/[0.14] bg-white/5 p-[clamp(24px,5vw,48px)] max-[768px]:p-6" method="post" action="/">
+                    <fieldset class="m-0 grid gap-[22px] border-0 p-0">
+                        <div class="flex flex-col gap-[7px]">
+                            <label class="text-[0.9rem] font-bold tracking-[0.035em] text-white/[0.82]" for="name">Nombre:</label>
+                            <input class="w-full rounded-xl border border-white/[0.14] bg-white/[0.06] px-3.5 py-2.5 text-white transition duration-200 focus:border-accent focus:bg-accent/10 focus:outline-none" type="text" id="name" name="name" required>
+                        </div>
+                        <div class="flex flex-col gap-[7px]">
+                            <label class="text-[0.9rem] font-bold tracking-[0.035em] text-white/[0.82]" for="email">Mail:</label>
+                            <input class="w-full rounded-xl border border-white/[0.14] bg-white/[0.06] px-3.5 py-2.5 text-white transition duration-200 focus:border-accent focus:bg-accent/10 focus:outline-none" type="email" id="email" name="email" required>
+                        </div>
+                        <div class="flex flex-col gap-[7px]">
+                            <label class="text-[0.9rem] font-bold tracking-[0.035em] text-white/[0.82]" for="message">Mensaje:</label>
+                            <textarea class="min-h-[120px] w-full resize-y rounded-xl border border-white/[0.14] bg-white/[0.06] px-3.5 py-2.5 text-white transition duration-200 focus:border-accent focus:bg-accent/10 focus:outline-none" name="message" id="message"></textarea>
+                        </div>
+                    </fieldset>
 
-                <button class="mx-auto mt-7 flex min-h-12 w-[min(190px,100%)] items-center justify-center rounded-full border border-transparent bg-accent font-extrabold text-bg transition duration-200 hover:-translate-y-0.5 hover:bg-[#ddbd7e] hover:shadow-[0_10px_26px_rgba(0,0,0,0.35)] max-[480px]:w-full" type="submit">Enviar</button>
-            </form>
+                    <button class="mx-auto mt-7 flex min-h-12 w-[min(190px,100%)] items-center justify-center rounded-full border border-transparent bg-accent font-extrabold text-bg transition duration-200 hover:-translate-y-0.5 hover:bg-[#ddbd7e] hover:shadow-[0_10px_26px_rgba(0,0,0,0.35)] max-[480px]:w-full" type="submit">Enviar</button>
+                </form>
+
+                <div class="mt-[30px] min-h-[320px] flex-1 basis-[360px] overflow-hidden rounded-[24px] border border-white/[0.14] shadow-[0_20px_45px_rgba(0,0,0,0.45)]">
+                    <iframe class="h-full w-full min-h-[320px] grayscale-[35%] contrast-[1.1]" src="https://maps.google.com/maps?q=San%20Carlos%20de%20Bariloche%2C%20R%C3%ADo%20Negro%2C%20Argentina&t=&z=13&ie=UTF8&iwloc=&output=embed" title="Ubicación de Hotel Bariloche en el mapa" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
         </section>
     </main>
 
