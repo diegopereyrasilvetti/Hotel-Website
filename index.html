@@ -22,10 +22,49 @@
             --color-accent: #cda45a;
             --font-sans: "Noto Sans", sans-serif;
         }
+
+        @keyframes bg-drift {
+            0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+            50% { transform: translate3d(4%, 3%, 0) scale(1.12); }
+        }
+
+        .bg-aurora {
+            position: fixed;
+            inset: -20%;
+            z-index: -1;
+            pointer-events: none;
+            background:
+                radial-gradient(600px 400px at 20% 30%, rgba(20, 90, 120, 0.22), transparent 70%),
+                radial-gradient(500px 360px at 80% 70%, rgba(205, 164, 90, 0.10), transparent 70%);
+            animation: bg-drift 24s ease-in-out infinite;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .bg-aurora { animation: none; }
+        }
+        @keyframes reveal-from-left {
+            from { opacity: 0; translate: 0 32px; scale: 0.94; filter: blur(8px); }
+            to { opacity: 1; translate: 0 0; scale: 1; filter: blur(0); }
+        }
+
+        @keyframes reveal-from-right {
+            from { opacity: 0; translate: 0 32px; scale: 0.94; filter: blur(8px); }
+            to { opacity: 1; translate: 0 0; scale: 1; filter: blur(0); }
+        }
+
+        .reveal-hidden { opacity: 0; }
+        .reveal-left { animation: reveal-from-left 0.9s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s) backwards; }
+        .reveal-right { animation: reveal-from-right 0.8s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s) backwards; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal-hidden { opacity: 1; }
+            .reveal-left, .reveal-right { animation: none; }
+        }
     </style>
 </head>
 
 <body class="min-h-screen overflow-x-hidden bg-bg bg-[radial-gradient(1100px_520px_at_10%_-10%,rgba(20,70,95,0.30),transparent_60%),radial-gradient(900px_460px_at_100%_0%,rgba(205,164,90,0.08),transparent_55%)] font-sans text-base leading-[1.75] text-white max-[480px]:text-[15px]">
+    <div class="bg-aurora" aria-hidden="true"></div>
     <header class="sticky top-0 z-50 h-[76px] border-b border-white/[0.14] bg-gradient-to-br from-[rgba(13,45,64,0.95)] to-[rgba(7,15,22,0.94)] shadow-[0_8px_30px_rgba(0,0,0,0.35)] backdrop-blur-md max-[480px]:h-16">
         <nav class="relative mx-auto flex h-full w-[min(1120px,calc(100%-40px))] items-center justify-between max-[480px]:w-[calc(100%-24px)]">
             <a class="flex items-center gap-2.5 text-white no-underline" href="#" aria-label="Hotel Bariloche - Inicio">
@@ -56,7 +95,7 @@
                     </li>
                     <li class="w-[min(100%,420px)] text-center md:w-auto">
                         <a class="group relative block px-1 py-2 text-[0.98rem] font-semibold tracking-[0.02em] text-white/[0.82] transition-colors duration-200 hover:text-white" href="#excurciones">
-                            Excurciones
+                            Excursiones
                             <span class="pointer-events-none absolute inset-x-1 bottom-0.5 h-0.5 origin-left scale-x-0 bg-accent transition-transform duration-200 ease-out group-hover:scale-x-100"></span>
                         </a>
                     </li>
@@ -86,13 +125,18 @@
                 </div>
                 <button type="button" class="hero-carousel-prev absolute left-4 top-1/2 z-10 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full border border-white/25 bg-bg/55 text-[1.1rem] text-white backdrop-blur-md transition duration-200 hover:scale-105 hover:border-accent hover:bg-black/75" aria-label="Imagen anterior">&#10094;</button>
                 <button type="button" class="hero-carousel-next absolute right-4 top-1/2 z-10 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full border border-white/25 bg-bg/55 text-[1.1rem] text-white backdrop-blur-md transition duration-200 hover:scale-105 hover:border-accent hover:bg-black/75" aria-label="Siguiente imagen">&#10095;</button>
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 z-[5] bg-gradient-to-t from-bg/90 via-bg/50 to-transparent px-[clamp(20px,5vw,56px)] pb-14 pt-24 max-[480px]:pb-12">
+                    <p class="text-sm font-bold uppercase tracking-[0.2em] text-accent">Desde 1955</p>
+                    <p class="mt-1 max-w-[560px] text-[clamp(1.4rem,4vw,2.6rem)] font-bold leading-tight tracking-[-0.02em] text-white">Tu hogar en el corazón de la Patagonia</p>
+                    <a class="pointer-events-auto mt-4 inline-flex min-h-11 items-center rounded-full bg-accent px-6 font-extrabold text-bg no-underline transition duration-200 hover:bg-[#ddbd7e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" href="#reservar">Reservar ahora</a>
+                </div>
                 <div class="hero-carousel-dots absolute inset-x-0 bottom-4 flex justify-center gap-2"></div>
             </div>
         </section>
         <section class="flex scroll-mt-[110px] flex-wrap-reverse items-center gap-[clamp(24px,5vw,48px)] rounded-[28px] border border-white/[0.14] bg-white/5 p-[clamp(32px,6vw,72px)] max-[768px]:p-7" id="nosotros">
             <img class="w-full max-w-[420px] flex-1 basis-[320px] rounded-2xl object-cover shadow-[0_20px_45px_rgba(0,0,0,0.45)]" src="./images/descarga.jfif" alt="Vista exterior del hotel al atardecer, con las montañas de Bariloche de fondo">
             <div class="max-w-[790px] flex-1 basis-[420px]">
-                <h2 class="mb-[18px] text-[clamp(1.75rem,6vw,3.4rem)] font-bold leading-[1.12] tracking-[-0.035em] text-white">Nosotros</h2>
+                <h2 class="mb-7 text-[clamp(1.75rem,6vw,3.4rem)] font-bold leading-[1.12] tracking-[-0.035em] text-white after:mt-4 after:block after:h-1 after:w-14 after:rounded-full after:bg-accent after:content-['']">Nosotros</h2>
                 <p class="text-white/70"><strong>Nuestra historia:</strong> Desde 1955, nuestra familia tiene el sueño de crear un lugar donde cada visitante pueda sentirse como en casa. Lo que comenzó como un pequeño proyecto familiar en el corazón de Bariloche, con el paso de los años se convirtió en una tradición que continúa hasta hoy.</p>
                 <p class="mt-3.5 text-white/70">Actualmente, somos los nietos de aquellos primeros fundadores quienes llevamos adelante el hotel, manteniendo vivos los mismos valores que nos acompañaron desde el comienzo: familia, unidad y hospitalidad.</p>
                 <p class="mt-3.5 text-white/70">Hoy, combinamos esa esencia familiar con instalaciones modernas, comodidades de primer nivel y una amplia variedad de servicios, pensados para brindar una experiencia segura, confortable y placentera.</p>
@@ -121,19 +165,23 @@
         </section>
 
         <section class="scroll-mt-[110px]" id="habitaciones">
-            <h2 class="mb-[18px] text-[clamp(1.75rem,6vw,3.4rem)] font-bold leading-[1.12] tracking-[-0.035em] text-white">Habitaciones</h2>
+            <h2 class="mb-7 text-[clamp(1.75rem,6vw,3.4rem)] font-bold leading-[1.12] tracking-[-0.035em] text-white after:mt-4 after:block after:h-1 after:w-14 after:rounded-full after:bg-accent after:content-['']">Habitaciones</h2>
             <div class="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-5">
-                <button type="button" class="room-card block overflow-hidden rounded-2xl border border-white/[0.14] bg-white/5 p-0 transition duration-200 hover:-translate-y-1 hover:border-accent hover:shadow-[0_14px_32px_rgba(0,0,0,0.4)] focus-visible:-translate-y-1 focus-visible:border-accent" data-img="./images/habitacion 1.jpg" data-alt="Habitación 1: cama king, bañera de hidromasaje junto a la ventana" aria-label="Ver habitación 1 en grande">
+                <button type="button" class="room-card relative block overflow-hidden rounded-2xl border border-white/[0.14] bg-white/5 p-0 transition duration-200 hover:-translate-y-1 hover:border-accent focus-visible:-translate-y-1 focus-visible:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent" data-img="./images/habitacion 1.jpg" data-alt="Habitación 1: cama king, bañera de hidromasaje junto a la ventana" aria-label="Ver habitación 1 en grande">
                     <img class="block aspect-[4/3] w-full object-cover" src="./images/habitacion 1.jpg" alt="Habitación 1: cama king, bañera de hidromasaje junto a la ventana">
+                    <span class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-bg/90 to-transparent px-4 pb-3 pt-8 text-left text-sm font-bold text-white" aria-hidden="true">Habitación 1</span>
                 </button>
-                <button type="button" class="room-card block overflow-hidden rounded-2xl border border-white/[0.14] bg-white/5 p-0 transition duration-200 hover:-translate-y-1 hover:border-accent hover:shadow-[0_14px_32px_rgba(0,0,0,0.4)] focus-visible:-translate-y-1 focus-visible:border-accent" data-img="./images/habitacion 2.jpg" data-alt="Habitación 2: cama queen y sector de estar con vista al bosque" aria-label="Ver habitación 2 en grande">
+                <button type="button" class="room-card relative block overflow-hidden rounded-2xl border border-white/[0.14] bg-white/5 p-0 transition duration-200 hover:-translate-y-1 hover:border-accent focus-visible:-translate-y-1 focus-visible:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent" data-img="./images/habitacion 2.jpg" data-alt="Habitación 2: cama queen y sector de estar con vista al bosque" aria-label="Ver habitación 2 en grande">
                     <img class="block aspect-[4/3] w-full object-cover" src="./images/habitacion 2.jpg" alt="Habitación 2: cama queen y sector de estar con vista al bosque">
+                    <span class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-bg/90 to-transparent px-4 pb-3 pt-8 text-left text-sm font-bold text-white" aria-hidden="true">Habitación 2</span>
                 </button>
-                <button type="button" class="room-card block overflow-hidden rounded-2xl border border-white/[0.14] bg-white/5 p-0 transition duration-200 hover:-translate-y-1 hover:border-accent hover:shadow-[0_14px_32px_rgba(0,0,0,0.4)] focus-visible:-translate-y-1 focus-visible:border-accent" data-img="./images/habitacion 3.jfif" data-alt="Habitación 3: cama queen con paneles de madera y sofá" aria-label="Ver habitación 3 en grande">
+                <button type="button" class="room-card relative block overflow-hidden rounded-2xl border border-white/[0.14] bg-white/5 p-0 transition duration-200 hover:-translate-y-1 hover:border-accent focus-visible:-translate-y-1 focus-visible:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent" data-img="./images/habitacion 3.jfif" data-alt="Habitación 3: cama queen con paneles de madera y sofá" aria-label="Ver habitación 3 en grande">
                     <img class="block aspect-[4/3] w-full object-cover" src="./images/habitacion 3.jfif" alt="Habitación 3: cama queen con paneles de madera y sofá">
+                    <span class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-bg/90 to-transparent px-4 pb-3 pt-8 text-left text-sm font-bold text-white" aria-hidden="true">Habitación 3</span>
                 </button>
-                <button type="button" class="room-card block overflow-hidden rounded-2xl border border-white/[0.14] bg-white/5 p-0 transition duration-200 hover:-translate-y-1 hover:border-accent hover:shadow-[0_14px_32px_rgba(0,0,0,0.4)] focus-visible:-translate-y-1 focus-visible:border-accent" data-img="./images/habitacion 4.jfif" data-alt="Habitación 4: cama queen con ventana al bosque y detalles en madera" aria-label="Ver habitación 4 en grande">
+                <button type="button" class="room-card relative block overflow-hidden rounded-2xl border border-white/[0.14] bg-white/5 p-0 transition duration-200 hover:-translate-y-1 hover:border-accent focus-visible:-translate-y-1 focus-visible:border-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent" data-img="./images/habitacion 4.jfif" data-alt="Habitación 4: cama queen con ventana al bosque y detalles en madera" aria-label="Ver habitación 4 en grande">
                     <img class="block aspect-[4/3] w-full object-cover" src="./images/habitacion 4.jfif" alt="Habitación 4: cama queen con ventana al bosque y detalles en madera">
+                    <span class="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-bg/90 to-transparent px-4 pb-3 pt-8 text-left text-sm font-bold text-white" aria-hidden="true">Habitación 4</span>
                 </button>
             </div>
             <dialog class="room-modal fixed top-1/2 left-1/2 m-0 max-h-[85vh] max-w-[min(90vw,900px)] -translate-x-1/2 -translate-y-1/2 rounded-2xl border-0 bg-transparent p-0 [&::backdrop]:bg-black/75 [&::backdrop]:backdrop-blur-[2px]">
@@ -143,7 +191,7 @@
         </section>
 
         <section class="scroll-mt-[110px]" id="reservar">
-            <h2 class="mb-[18px] text-[clamp(1.75rem,6vw,3.4rem)] font-bold leading-[1.12] tracking-[-0.035em] text-white">Reservá tu habitación</h2>
+            <h2 class="mb-7 text-[clamp(1.75rem,6vw,3.4rem)] font-bold leading-[1.12] tracking-[-0.035em] text-white after:mt-4 after:block after:h-1 after:w-14 after:rounded-full after:bg-accent after:content-['']">Reservá tu habitación</h2>
             <form class="mt-[30px] rounded-[24px] border border-white/[0.14] bg-white/5 p-[clamp(24px,5vw,48px)] max-[768px]:p-6" id="reserva-form">
                 <fieldset class="m-0 grid gap-[22px] border-0 p-0">
                     <div class="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-[22px]">
@@ -189,7 +237,7 @@
         </section>
 
         <section class="scroll-mt-[110px]" id="excurciones">
-            <h2 class="mb-[18px] text-[clamp(1.75rem,6vw,3.4rem)] font-bold leading-[1.12] tracking-[-0.035em] text-white">Excurciones</h2>
+            <h2 class="mb-7 text-[clamp(1.75rem,6vw,3.4rem)] font-bold leading-[1.12] tracking-[-0.035em] text-white after:mt-4 after:block after:h-1 after:w-14 after:rounded-full after:bg-accent after:content-['']">Excursiones</h2>
             <div class="carousel relative mx-auto w-[min(100%,720px)]">
                 <button type="button" class="carousel-btn carousel-prev absolute left-4 top-1/2 z-10 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full border border-white/25 bg-bg/55 text-[1.1rem] text-white backdrop-blur-md transition duration-200 hover:scale-105 hover:border-accent hover:bg-black/75" aria-label="Excursión anterior">&#10094;</button>
                 <div class="overflow-hidden rounded-[24px] shadow-[0_24px_60px_rgba(0,0,0,0.5)]">
@@ -214,7 +262,7 @@
         </section>
 
         <section class="scroll-mt-[110px]" id="contactanos">
-            <h2 class="mb-[18px] text-[clamp(1.75rem,6vw,3.4rem)] font-bold leading-[1.12] tracking-[-0.035em] text-white">Contactanos</h2>
+            <h2 class="mb-7 text-[clamp(1.75rem,6vw,3.4rem)] font-bold leading-[1.12] tracking-[-0.035em] text-white after:mt-4 after:block after:h-1 after:w-14 after:rounded-full after:bg-accent after:content-['']">Contactanos</h2>
             <div class="flex flex-wrap gap-[clamp(24px,5vw,48px)]">
                 <form class="mt-[30px] flex-1 basis-[360px] rounded-[24px] border border-white/[0.14] bg-white/5 p-[clamp(24px,5vw,48px)] max-[768px]:p-6" method="post" action="/">
                     <fieldset class="m-0 grid gap-[22px] border-0 p-0">
@@ -242,7 +290,7 @@
         </section>
     </main>
 
-    <footer class="flex min-h-[90px] flex-wrap items-center justify-center gap-x-7 gap-y-3.5 border-t border-white/[0.14] bg-surface px-5 py-8">
+    <footer class="flex min-h-[90px] flex-wrap items-center justify-center gap-x-7 gap-y-3.5 border-t border-accent/30 bg-surface px-5 py-8">
         <div class="mx-auto flex w-[min(1120px,calc(100%-40px))] flex-wrap items-start justify-between gap-x-12 gap-y-6 max-[768px]:flex-col max-[768px]:items-center max-[768px]:text-center">
 
             <div class="min-w-[260px] flex-1">
@@ -256,9 +304,9 @@
 
             <div class="min-w-[260px] flex-1">
                 <h3 class="mb-2.5 text-[1.05rem] font-bold text-white">Contacto</h3>
-                <p class="text-white/70">📍 Bariloche, Río Negro, Argentina</p>
-                <p class="text-white/70">📞 +54 294 XXX-XXXX</p>
-                <p class="text-white/70">✉️ reservas@hotelbariloche.com</p>
+                <p class="text-white/70"><i class="fa-solid fa-location-dot mr-2 w-4 text-accent" aria-hidden="true"></i>Bariloche, Río Negro, Argentina</p>
+                <p class="text-white/70"><i class="fa-solid fa-phone mr-2 w-4 text-accent" aria-hidden="true"></i>+54 294 XXX-XXXX</p>
+                <p class="text-white/70"><i class="fa-solid fa-envelope mr-2 w-4 text-accent" aria-hidden="true"></i>reservas@hotelbariloche.com</p>
             </div>
 
         </div>
