@@ -138,3 +138,37 @@ reservaForm.addEventListener('submit', (event) => {
     reservaCheckin.min = today;
     reservaCheckout.min = today;
 });
+
+
+// Side-slide reveal on scroll: elements enter from the left or right once.
+const revealTargets = [
+    ['#nosotros img', 'left'],
+    ['#nosotros > div', 'right'],
+    ['section:not([id]) li', 'alternate'],
+    ['.room-card', 'alternate'],
+    ['#reserva-form', 'left'],
+    ['.carousel', 'right'],
+    ['#contactanos form', 'left'],
+    ['#contactanos iframe', 'right'],
+];
+
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            el.classList.remove('reveal-hidden');
+            el.classList.add(el.dataset.reveal === 'left' ? 'reveal-left' : 'reveal-right');
+            revealObserver.unobserve(el);
+        });
+    }, { threshold: 0.15 });
+
+    revealTargets.forEach(([selector, direction]) => {
+        document.querySelectorAll(selector).forEach((el, index) => {
+            el.dataset.reveal = direction === 'alternate' ? (index % 2 === 0 ? 'left' : 'right') : direction;
+            el.style.setProperty('--reveal-delay', `${(index % 4) * 0.06}s`);
+            el.classList.add('reveal-hidden');
+            revealObserver.observe(el);
+        });
+    });
+}
