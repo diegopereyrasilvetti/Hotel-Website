@@ -21,6 +21,10 @@ Landing page de un hotel ficticio en Bariloche, Argentina. Proyecto hecho con **
 - **Modal de habitaciones** con el elemento nativo `<dialog>` (sin librería de modales), que muestra la foto en grande al hacer click en cada habitación.
 - **Formulario de reserva** con validación de fechas en JS: no deja elegir un check-in anterior a hoy, ni un check-out anterior o igual al check-in.
 - **Mapa embebido** (Google Maps) en la sección de contacto.
+- **Portada con mensaje y llamada a la acción**: el carrusel principal muestra un degradé con el lema del hotel y un botón "Reservar ahora" que lleva al formulario.
+- **Fondo animado**: una luz suave (azul petróleo y dorada) que se desplaza muy lento detrás del contenido, hecha solo con CSS (`@keyframes`).
+- **Animación al hacer scroll**: las secciones aparecen una sola vez, subiendo, agrandándose y pasando de desenfocado a nítido. Usa `IntersectionObserver` (sin librerías) y se desactiva si el usuario tiene activado "reducir movimiento" (`prefers-reduced-motion`).
+- **Habitaciones con nombre** sobre cada foto, títulos de sección con detalle dorado y pie de página con íconos de Font Awesome.
 - Diseño completamente **responsive** (probado en mobile, tablet y desktop).
 
 ## Estructura del proyecto
