@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+    --color-bg: #070d12;
+    --color-surface: #101a22;
+    --color-maroon-900: #0a2436;
+    --color-accent: #cda45a;
+    --font-sans: "Noto Sans", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
+}
+
+@media (max-width: 480px) {
+    html { scroll-padding-top: 90px; }
+}
+
+@keyframes bg-drift {
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+    50% { transform: translate3d(4%, 3%, 0) scale(1.12); }
+}
+
+.bg-aurora {
+    position: fixed;
+    inset: -20%;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(600px 400px at 20% 30%, rgba(20, 90, 120, 0.22), transparent 70%),
+        radial-gradient(500px 360px at 80% 70%, rgba(205, 164, 90, 0.10), transparent 70%);
+    animation: bg-drift 24s ease-in-out infinite;
+}
+
+@keyframes reveal-up {
+    from { opacity: 0; translate: 0 32px; scale: 0.94; filter: blur(8px); }
+    to { opacity: 1; translate: 0 0; scale: 1; filter: blur(0); }
+}
+
+.reveal-hidden { opacity: 0; }
+.reveal-in { animation: reveal-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s) backwards; }
+
+@media (prefers-reduced-motion: reduce) {
+    .bg-aurora, .reveal-in { animation: none; }
+    .reveal-hidden { opacity: 1; }
+}

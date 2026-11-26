@@ -2,11 +2,22 @@
   "name": "hotel-bariloche",
   "version": "1.0.0",
   "private": true,
-  "description": "Landing page de Hotel Bariloche hecha con HTML, Tailwind y JavaScript vanilla.",
+  "type": "module",
+  "description": "Landing page de Hotel Bariloche hecha con React, Vite y Tailwind CSS.",
   "scripts": {
-    "dev": "serve . --listen 3000"
+    "dev": "vite --port 3000",
+    "build": "vite build",
+    "preview": "vite preview --port 3000"
+  },
+  "dependencies": {
+    "react": "19",
+    "react-dom": "19",
+    "react-router-dom": "7"
   },
   "devDependencies": {
-    "serve": "14.2.8"
+    "@tailwindcss/vite": "^4.3.5",
+    "@vitejs/plugin-react": "^6.3.0",
+    "tailwindcss": "^4.3.5",
+    "vite": "^8.4.0"
   }
 }
