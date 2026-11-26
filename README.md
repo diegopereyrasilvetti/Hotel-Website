@@ -37,16 +37,25 @@ hotel/
 ├── habitaciones.html  # Página de detalle de habitaciones y comodidades
 ├── rooms.js           # Animación al hacer scroll de la página de habitaciones
 ├── images/            # Fotos del hotel, habitaciones y excursiones
-└── styles/style.css   # Sin uso actualmente (ver nota arriba)
+├── styles/style.css   # Sin uso actualmente (ver nota arriba)
+├── package.json       # Script `yarn dev` y dependencia de desarrollo (serve)
+├── yarn.lock          # Versiones exactas de las dependencias
+└── serve.json         # Configuración del servidor local
 ```
 
 ## Cómo correrlo localmente
 
-No requiere instalación ni build. Alcanza con abrir `index.html` en el navegador, o levantar cualquier servidor estático desde la carpeta del proyecto, por ejemplo:
+No requiere build. Se puede abrir `index.html` directo en el navegador, pero se recomienda levantar el servidor local con [Yarn](https://classic.yarnpkg.com/) (v1):
 
 ```bash
-npx serve .
+yarn install
+yarn dev
 ```
+
+El sitio queda en http://localhost:3000.
+
+- `yarn dev` usa [`serve`](https://github.com/vercel/serve) como servidor estático (dependencia de desarrollo).
+- `serve.json` desactiva `cleanUrls`: así `index.html?habitacion=N` no se redirige a `/index` perdiendo el parámetro, y la preselección de la habitación en el formulario funciona.
 
 ## Decisiones / cosas a mejorar a futuro
 
