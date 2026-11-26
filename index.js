@@ -117,6 +117,13 @@ const today = new Date().toISOString().split('T')[0];
 reservaCheckin.min = today;
 reservaCheckout.min = today;
 
+// Preselect the room when arriving from habitaciones.html (?habitacion=N).
+const requestedRoom = new URLSearchParams(window.location.search).get('habitacion');
+const reservaHabitacion = document.getElementById('reserva-habitacion');
+if (requestedRoom && reservaHabitacion.querySelector(`option[value="Habitación ${requestedRoom}"]`)) {
+    reservaHabitacion.value = `Habitación ${requestedRoom}`;
+}
+
 reservaCheckin.addEventListener('change', () => {
     reservaCheckout.min = reservaCheckin.value || today;
     if (reservaCheckout.value && reservaCheckout.value <= reservaCheckin.value) {
