@@ -25,6 +25,7 @@ Landing page de un hotel ficticio en Bariloche, Argentina. Proyecto hecho con **
 - **Fondo animado**: una luz suave (azul petróleo y dorada) que se desplaza muy lento detrás del contenido, hecha solo con CSS (`@keyframes`).
 - **Animación al hacer scroll**: las secciones aparecen una sola vez, subiendo, agrandándose y pasando de desenfocado a nítido. Usa `IntersectionObserver` (sin librerías) y se desactiva si el usuario tiene activado "reducir movimiento" (`prefers-reduced-motion`).
 - **Habitaciones con nombre** sobre cada foto, títulos de sección con detalle dorado y pie de página con íconos de Font Awesome.
+- **Página de habitaciones** (`habitaciones.html`): detalle de cada habitación con foto, superficie, capacidad, tipo de cama y comodidades, más lo incluido en todas. El botón "Reservar esta habitación" lleva al formulario del inicio con la habitación ya elegida (`index.html?habitacion=N#reservar`).
 - Diseño completamente **responsive** (probado en mobile, tablet y desktop).
 
 ## Estructura del proyecto
@@ -33,6 +34,8 @@ Landing page de un hotel ficticio en Bariloche, Argentina. Proyecto hecho con **
 hotel/
 ├── index.html        # Toda la maquetación y clases de Tailwind
 ├── index.js           # Lógica: menú, carruseles, modal, formulario de reserva
+├── habitaciones.html  # Página de detalle de habitaciones y comodidades
+├── rooms.js           # Animación al hacer scroll de la página de habitaciones
 ├── images/            # Fotos del hotel, habitaciones y excursiones
 └── styles/style.css   # Sin uso actualmente (ver nota arriba)
 ```
